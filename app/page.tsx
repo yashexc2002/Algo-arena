@@ -106,7 +106,7 @@ export default function Home() {
             <PixelHero />
           </div>
           <h1 className="text-2xl md:text-4xl text-white leading-loose">
-            {user ? `PLAYER: ${user.displayName?.split(' ')[0]}` : 'READY PLAYER'}
+            {user ? `PLAYER: ${user.displayName?.split(' ')[0]}` : 'LOGIN TO SAVE PROGRESS'}
           </h1>
         </div>
         
