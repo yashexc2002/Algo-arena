@@ -29,6 +29,11 @@ export default function RootLayout({
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
               {children}
             </main>
+            <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center text-[10px] leading-relaxed text-zinc-500">
+              DISCLAIMER: Some questions are sourced from LeetCode for educational purposes.
+              LeetCode is a trademark of its respective owner. This project is not affiliated
+              with or endorsed by LeetCode, and all rights belong to their respective owners.
+            </footer>
           </SoundProvider>
         </AuthProvider>
       </body>
