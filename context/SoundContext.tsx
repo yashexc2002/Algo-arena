@@ -38,7 +38,6 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     setIsSoundOn(initialSoundState);
     soundOnRef.current = initialSoundState;
 
-    // Audio file load karna
     const bgm = new Audio('/bgm.wav');
     bgm.loop = true;      
     bgm.volume = 0.15;    
@@ -47,14 +46,12 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       playBgm(bgm);
     }
 
-    // INVISIBLE TRIGGER: User page pe kahin bhi click karega toh music on ho jayega
     const startBgmInvisibly = () => {
       if (!interactionDone.current) {
         interactionDone.current = true;
         if (soundOnRef.current) {
           playBgm(bgm);
         }
-        // Ek baar baj gaya toh ye listener hata do
         document.removeEventListener('click', startBgmInvisibly);
         document.removeEventListener('keydown', startBgmInvisibly);
       }
@@ -83,7 +80,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
   const toggleSound = () => {
     initAudio();
-    interactionDone.current = true; // Button dabane par bhi music unlock ho jayega
+    interactionDone.current = true;
 
     setIsSoundOn((prev) => {
       const newState = !prev;

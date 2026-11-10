@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
-import { useSound } from '@/context/SoundContext'; // NAYA IMPORT
-import { Volume2, VolumeX, Terminal } from 'lucide-react'; // Icons
+import { useSound } from '@/context/SoundContext';
+import { Volume2, VolumeX, Terminal } from 'lucide-react';
 
 export default function Navbar() {
   const { user, signInWithGoogle, logout } = useAuth();
-  const { isSoundOn, toggleSound, playSound } = useSound(); // SOUND HOOK
+  const { isSoundOn, toggleSound, playSound } = useSound();
 
   return (
     <nav className="border-b-4 border-white bg-black p-4 sticky top-0 z-50">
@@ -21,18 +21,16 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-6">
-          {/* SOUND TOGGLE BUTTON */}
           <button 
             onClick={() => {
               toggleSound();
-              if (!isSoundOn) playSound('click'); // Play click when turning ON
+              if (!isSoundOn) playSound('click');
             }} 
             className="text-zinc-400 hover:text-white outline-none"
           >
             {isSoundOn ? <Volume2 className="w-6 h-6 text-green-500" /> : <VolumeX className="w-6 h-6 text-red-500" />}
           </button>
 
-          {/* AUTH BUTTON */}
           {user ? (
             <button onClick={() => { playSound('click'); logout(); }} className="border-2 border-white px-3 py-1.5 text-[10px] text-white hover:bg-white hover:text-black transition-colors">
               LOGOUT

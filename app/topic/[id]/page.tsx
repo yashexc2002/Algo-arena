@@ -28,7 +28,6 @@ export default async function TopicPage({ params }: { params: Promise<{ id: stri
   return (
     <div className="space-y-8 animate-in fade-in zoom-in-95 duration-700 max-w-6xl mx-auto pb-20 mt-4">
       
-      {/* Premium Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-zinc-800/60">
         <div className="flex items-start md:items-center gap-4">
           <Link href="/">
@@ -50,9 +49,7 @@ export default async function TopicPage({ params }: { params: Promise<{ id: stri
         </div>
       </div>
 
-      {/* Main Container for the Custom Grid */}
       <div className="relative rounded-2xl bg-zinc-950 border border-zinc-800/60 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
-        {/* Subtle top glow */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/20 to-transparent"></div>
         
         <QuestionTable topicId={id} questions={topicData.questions} />

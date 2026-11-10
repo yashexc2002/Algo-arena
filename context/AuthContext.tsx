@@ -10,7 +10,6 @@ import {
   User 
 } from 'firebase/auth';
 
-// 🔥 YAHAN FIX KIYA: signInWithGoogle ko TypeScript ko bata diya
 interface AuthContextType {
   user: User | null;
   loading: boolean;

@@ -2,17 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
-import { useSound } from '@/context/SoundContext'; // 1. HOOK IMPORT KIYA
+import { useSound } from '@/context/SoundContext';
 import { db } from '@/lib/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 export default function QuestionTable({ topicId, questions }: { topicId: string, questions: any[] }) {
   const { user } = useAuth();
-  const { playSound } = useSound(); // 2. FUNCTION NIKALA
+  const { playSound } = useSound();
   const [completed, setCompleted] = useState<Record<number, boolean>>({});
   const [loading, setLoading] = useState(true);
 
-  // ... (useEffect wala code same rahega) ...
   useEffect(() => {
     if (!user) { setLoading(false); return; }
     const fetchProgress = async () => {
@@ -23,7 +22,7 @@ export default function QuestionTable({ topicId, questions }: { topicId: string,
     fetchProgress();
   }, [user]);
 
-  const handleToggle = async (questionId: number, difficulty: string) => { // 3. DIFFICULTY PASS KI
+  const handleToggle = async (questionId: number, difficulty: string) => {
     if (!user) {
       alert("ERROR: GUEST CANNOT SAVE PROGRESS. LOG IN TO PLAY!");
       return;
@@ -31,12 +30,11 @@ export default function QuestionTable({ topicId, questions }: { topicId: string,
 
     const isCurrentlyDone = !!completed[questionId];
     
-    // 4. AGAR NAYA TICK LAGA RAHE HAIN, TOH SOUND PLAY KARO
     if (!isCurrentlyDone) {
       if (difficulty === 'Hard') playSound('boss');
       else playSound('coin');
     } else {
-      playSound('click'); // Agar un-tick kiya toh normal click sound
+      playSound('click');
     }
 
     const newState = { ...completed, [questionId]: !isCurrentlyDone };
@@ -53,7 +51,6 @@ export default function QuestionTable({ topicId, questions }: { topicId: string,
   return (
     <div className="w-full border-4 border-white bg-black shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
       
-      {/* RPG Header Row */}
       <div className="hidden md:flex justify-between px-6 py-4 text-[10px] text-yellow-400 border-b-4 border-white bg-zinc-900">
         <div className="w-[10%] text-center">STATUS</div>
         <div className="w-[50%]">QUEST NAME</div>
@@ -61,7 +58,6 @@ export default function QuestionTable({ topicId, questions }: { topicId: string,
         <div className="w-[20%] text-right">ACTION</div>
       </div>
 
-      {/* Quests */}
       <div className="flex flex-col">
         {questions.map((q: any, index: number) => {
           const isDone = !!completed[q.id];
@@ -69,9 +65,7 @@ export default function QuestionTable({ topicId, questions }: { topicId: string,
           return (
             <div key={q.id || index} className="flex flex-col md:flex-row justify-between items-start md:items-center px-6 py-6 border-b-4 border-zinc-900 hover:bg-zinc-900/50 transition-colors gap-4">
               
-              {/* Checkbox */}
               <div className="w-full md:w-[10%] flex justify-start md:justify-center">
-                {/* 5. handleToggle ko difficulty pass ki */}
                 <button onClick={() => handleToggle(q.id, q.difficulty)} disabled={loading} className="text-sm md:text-base outline-none">
                   {isDone ? (
                     <span className="text-green-500 animate-pulse">[X]</span>

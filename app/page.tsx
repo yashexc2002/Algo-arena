@@ -18,11 +18,9 @@ const dsaTopics = Object.keys(questionsData).map(key => ({
 
 const getXpForDifficulty = (diff: string) => diff === 'Easy' ? 10 : diff === 'Medium' ? 20 : 50;
 
-// 🎮 REAL PIXEL ART HERO (Requires /public/hero.png)
 const PixelHero = () => {
   const [frame, setFrame] = useState(0);
 
-  // Idle breathing (saans lene ka) effect
   useEffect(() => {
     const timer = setInterval(() => setFrame((f) => (f === 0 ? 1 : 0)), 600);
     return () => clearInterval(timer);
@@ -40,7 +38,6 @@ const PixelHero = () => {
   );
 };
 
-// 🎮 REAL PIXEL ART BOSS (Requires /public/boss.png)
 const PixelMage = () => {
   const [frame, setFrame] = useState(0);
 
@@ -95,10 +92,8 @@ export default function Home() {
   return (
     <div className="space-y-12 pb-20">
       
-      {/* PLAYER STATS PANEL */}
       <div className="border-4 border-white bg-black p-6 md:p-10 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] relative mt-4">
         
-        {/* Boss Enemy floating in the background corner */}
         <div className="absolute top-6 right-6 md:top-8 md:right-10 flex flex-col items-center gap-2 opacity-80 pointer-events-none">
            <span className="text-red-500 text-[10px] animate-pulse">BOSS_WAITING</span>
            <PixelMage />
@@ -106,7 +101,6 @@ export default function Home() {
 
         <div className="text-[10px] text-green-400 mb-4 animate-pulse">{'>>>'} SYSTEM READY_</div>
         
-        {/* PLAYER AVATAR AND NAME */}
         <div className="flex items-center gap-4 md:gap-8 mb-6 pr-20 md:pr-40">
           <div className="hidden sm:block">
             <PixelHero />
@@ -136,7 +130,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* WORLD MAP (LEVELS) */}
       <div>
         <h2 className="text-xl text-yellow-400 mb-8 border-b-4 border-white pb-2 inline-block">WORLD MAP // ZONES</h2>
         
@@ -176,7 +169,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CREATOR LINKEDIN CREDIT */}
       <section className="border-4 border-blue-500 bg-black p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(59,130,246,0.35)]">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>

@@ -3,7 +3,7 @@ import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/context/AuthContext";
-import { SoundProvider } from "@/context/SoundContext"; // NAYA IMPORT
+import { SoundProvider } from "@/context/SoundContext";
 
 const pixelFont = Press_Start_2P({ 
   weight: "400", 
@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${pixelFont.className} bg-black text-white min-h-screen selection:bg-green-500/30 uppercase antialiased`}>
         <AuthProvider>
-          {/* NAYA: SoundProvider add kiya */}
           <SoundProvider>
             <Navbar />
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
