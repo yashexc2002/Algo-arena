@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/context/AuthContext";
@@ -33,6 +34,13 @@ export default function RootLayout({
               DISCLAIMER: Some questions are sourced from LeetCode for educational purposes.
               LeetCode is a trademark of its respective owner. This project is not affiliated
               with or endorsed by LeetCode, and all rights belong to their respective owners.
+              <nav className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2">
+                <Link href="/privacy" className="hover:text-white">PRIVACY POLICY</Link>
+                <Link href="/terms" className="hover:text-white">TERMS OF SERVICE</Link>
+                <Link href="/contact" className="hover:text-white">CONTACT US</Link>
+                <Link href="/about" className="hover:text-white">ABOUT US</Link>
+                <Link href="/disclaimer" className="hover:text-white">DISCLAIMER</Link>
+              </nav>
             </footer>
           </SoundProvider>
         </AuthProvider>

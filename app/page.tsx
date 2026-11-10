@@ -190,6 +190,43 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <section className="mx-auto max-w-4xl border-4 border-zinc-800 bg-black p-6 md:p-10">
+        <div className="space-y-5 text-sm leading-8 text-zinc-300 normal-case">
+          <h2 className="text-xl leading-relaxed text-yellow-400 md:text-2xl">
+            How to use Algo Arena to crack interviews
+          </h2>
+          <p>
+            Technical interviews reward more than knowing a few clever solutions. They measure
+            how consistently you can recognize patterns, explain your thinking, and write
+            reliable code under pressure. That is why tracking your Data Structures and
+            Algorithms progress matters. A clear record shows which topics you have practiced,
+            where your confidence is growing, and which skills still need focused attention.
+          </p>
+          <p>
+            Algo Arena gives your preparation a structured training ground. Work through topic
+            zones such as arrays, strings, trees, and graphs, then mark questions complete as
+            you solve them. Reviewing your progress helps you avoid practicing only familiar
+            problems and encourages balanced interview preparation. Use the tracker to set a
+            realistic weekly target, revisit questions that took extra effort, and gradually
+            increase the difficulty of your challenges.
+          </p>
+          <p>
+            Consistency is the advantage that compounds. Even one focused problem each day can
+            build stronger recall and problem-solving speed when you keep showing up. Before
+            looking at an editorial, spend time clarifying constraints, considering edge cases,
+            and comparing possible approaches. Afterward, record what you learned and return to
+            the problem later without hints. This active repetition turns isolated practice into
+            lasting skill.
+          </p>
+          <p>
+            Treat Algo Arena as a progress dashboard, not a race. Combine it with mock interviews,
+            timed sessions, and clear communication practice. With steady effort and honest
+            tracking, you can turn a large DSA syllabus into manageable milestones and approach
+            your next technical interview with a stronger, more confident process.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
