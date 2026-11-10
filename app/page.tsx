@@ -102,11 +102,11 @@ export default function Home() {
         <div className="text-[10px] text-green-400 mb-4 animate-pulse">{'>>>'} SYSTEM READY_</div>
         
         <div className="flex items-center gap-4 md:gap-8 mb-6 pr-20 md:pr-40">
-          <div className="hidden sm:block">
+          <div>
             <PixelHero />
           </div>
           <h1 className="text-2xl md:text-4xl text-white leading-loose">
-            {user ? `PLAYER: ${user.displayName?.split(' ')[0]}` : 'PRESS START'}
+            {user ? `PLAYER: ${user.displayName?.split(' ')[0]}` : 'READY PLAYER'}
           </h1>
         </div>
         
