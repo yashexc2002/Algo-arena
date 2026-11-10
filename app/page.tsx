@@ -192,10 +192,10 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-4xl border-4 border-zinc-800 bg-black p-6 md:p-10">
-        <div className="space-y-5 text-sm leading-8 text-zinc-300 normal-case">
-          <h2 className="text-xl leading-relaxed text-yellow-400 md:text-2xl">
-            How to use Algo Arena to crack interviews
-          </h2>
+        <h2 className="text-xl leading-relaxed text-yellow-400 md:text-2xl">
+          How to use Algo Arena to crack interviews
+        </h2>
+        <div className="mt-8 max-h-32 space-y-4 overflow-y-auto rounded border border-gray-800 p-4 text-xs leading-6 text-zinc-300 opacity-75 normal-case">
           <p>
             Technical interviews reward more than knowing a few clever solutions. They measure
             how consistently you can recognize patterns, explain your thinking, and write
