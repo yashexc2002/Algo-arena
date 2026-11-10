@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
+import Script from "next/script";
 import Link from "next/link";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${pixelFont.className} bg-black text-white min-h-screen selection:bg-green-500/30 uppercase antialiased`}>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1296094824779726" crossOrigin="anonymous" strategy="afterInteractive" />
         <AuthProvider>
           <SoundProvider>
             <Navbar />
